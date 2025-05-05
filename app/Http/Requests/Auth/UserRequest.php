@@ -23,7 +23,7 @@ class UserRequest extends FormRequest
     {
         return [
             'card_number' => 'required|min:12|max:50|string|exists:cards,card_number',
-            'phone' => 'required|min:8|max:255|string|exists:users,phone',
+            'phone' => 'required|min:8|max:50|string|exists:users,phone',
         ];
     }
 }

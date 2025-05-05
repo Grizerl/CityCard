@@ -4,19 +4,17 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\UserRequest;
-use App\Models\Card;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 
 class UserAuthController extends Controller
 {
-   public function loginForm()
+   public function create()
    {
-        return view('auth.login');
+        return view('auth.user.login');
    }
 
-   public function login(UserRequest $request)
+   public function store(UserRequest $request)
    {
         $phone = $request->input('phone');
         $cardNumber = $request->input('card_number');
@@ -25,7 +23,7 @@ class UserAuthController extends Controller
      
         if ($user && $user->cards()->where('card_number', $cardNumber)->exists()) {
             Auth::login($user);
-            return redirect()->route('dashboard');
+            return redirect()->route('user.dashboard');
         }
 
         return redirect()->back();
