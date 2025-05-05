@@ -11,4 +11,9 @@ class Transport extends Model
         'transport_type',
         'transport_number'
     ];
+
+    public function trips()
+    {
+        return $this->hasMany(Trip::class);
+    }
 }

@@ -12,4 +12,19 @@ class Trip extends Model
         'tikets_types_id',
         'transport_id'
     ];
+
+    public function cards()
+    {
+        return $this->belongsTo(Card::class);
+    }
+
+    public function tiket_types()
+    {
+        return $this->belongsTo(Tiket_Type::class);
+    }
+
+    public function transports()
+    {
+        return $this->belongsTo(Transport::class);
+    }
 }

@@ -12,4 +12,9 @@ class Transaction extends Model
         'transactions_type',
         'card_id'
     ];
+
+    public function cards()
+    {
+        return $this->belongsTo(Card::class);
+    }
 }

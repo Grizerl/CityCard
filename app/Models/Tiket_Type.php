@@ -11,4 +11,9 @@ class Tiket_Type extends Model
         'price',
         'transport_category',
     ];
+
+    public function trips()
+    {
+        return $this->hasMany(Trip::class);
+    }
 }
