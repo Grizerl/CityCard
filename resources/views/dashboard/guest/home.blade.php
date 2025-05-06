@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.user-dashboard')
 
 @section('content')
 
@@ -17,7 +17,7 @@
                             <div class="my-3">
                                 <h5>Поїздки:</h5>
                                 @forelse($card->trips as $trip)
-                                    <p>Поїздка №: {{ $trip->id }} | {{ $trip->tiket_types->transport_category }} | {{ $trip->transports->transport_number }} | {{ $trip->tiket_types->price }} грн | {{ $trip->created_at }}</p>
+                                    <p>Поїздка №: {{ $trip->id }} | {{ $trip->tiket_types->transport_category }} | {{ $trip->transports->transport_number }} | {{ $trip->tiket_types->price }} грн | {{ $trip->city->name }}| {{ $trip->created_at }}</p>
                                 @empty
                                     <p class="text-muted">Дані відсутні</p>
                                 @endforelse

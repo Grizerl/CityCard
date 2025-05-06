@@ -10,4 +10,13 @@ class Citi extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function trips()
+    {
+        return $this->hasMany(Trip::class);
+    }
+    public function transports()
+    {
+        return $this->hasMany(Transport::class);
+    }
 }
