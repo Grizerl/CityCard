@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\UserAuthController;
 use App\Http\Controllers\Dashboard\Admin\AdminDashboard;
 use App\Http\Controllers\Dashboard\User\UserDashboard;
 use App\Http\Middleware\Admin;
@@ -18,6 +19,8 @@ Route::prefix('admin')->middleware(Admin::class)->group(function(){
 Route::prefix('user')->middleware(User::class)->group(function(){
 
     Route::get('dashboard', [UserDashboard::class, 'home'])->name('user.dashboard');
+
+    Route::post('/logout', [UserAuthController::class, 'logout'])->name('user.logout');
 });
 
 

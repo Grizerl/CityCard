@@ -28,4 +28,10 @@ class UserAuthController extends Controller
 
         return redirect()->back();
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('user.login.form');
+    }
 }
