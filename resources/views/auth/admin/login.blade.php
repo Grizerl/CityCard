@@ -4,7 +4,7 @@
 <form action="{{ route('admin.login') }}" method="post">
   @csrf
   <div class="mb-3">
-    <label for="Login" class="form-label">Login</label>
+    <label for="User Access" class="form-label">User Access</label>
     <input type="text" class="form-control" name="name" placeholder="Your name">
     @error('name')
         <div class="text-danger">{{ $message }}</div>

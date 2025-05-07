@@ -22,4 +22,9 @@ class Transport extends Model
     {
         return $this->belongsTo(Citi::class);
     }
+
+    public function tiket_type()
+    {
+        return $this->hasMany(Tiket_Type::class);
+    }
 }

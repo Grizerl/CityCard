@@ -11,7 +11,6 @@ class Trip extends Model
         'card_id',
         'tikets_types_id',
         'transport_id',
-        'city_id',
     ];
 
     public function cards()
@@ -27,10 +26,5 @@ class Trip extends Model
     public function transports()
     {
         return $this->belongsTo(Transport::class, 'transport_id');
-    }
-
-    public function city()
-    {
-        return $this->belongsTo(Citi::class, 'city_id');
     }
 }

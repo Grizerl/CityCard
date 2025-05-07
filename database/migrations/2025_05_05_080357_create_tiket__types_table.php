@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('tiket__types', function (Blueprint $table) {
             $table->id();
             $table->decimal('price', 10, 2);
-            $table->enum('transport_category', ['trolleybus', 'bus']);
             $table->timestamps();
         });
     }

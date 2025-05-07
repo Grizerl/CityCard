@@ -15,16 +15,16 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'Admin1',
-            'phone' => '+380950660929',
-            'password' => Hash::make('adminpassword1'),
+            'name' => 'System Admin',
+            'phone' => '+380671112233',
+            'password' => Hash::make('admin123'),
             'role' => 'admin'
         ]);
 
         User::create([
-            'name' => 'Admin2',
-            'phone' => '+380950770832',
-            'password' => Hash::make('adminpassword2'),
+            'name' => 'Content Moderator',
+            'phone' => '++380931234567',
+            'password' => Hash::make('moder123'),
             'role' => 'admin'
         ]);
     }

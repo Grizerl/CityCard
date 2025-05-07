@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('trips', function (Blueprint $table) {
-            $table->unsignedBigInteger('city_id')->after('transport_id');
-            $table->foreign('city_id')->references('id')->on('citis')->onDelete('cascade');
+        Schema::table('tiket__types', function (Blueprint $table) {
+            $table->enum('name', ['preferential', 'pupillary', 'regular'])->after('id');
         });
     }
 
@@ -22,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('trips', function (Blueprint $table) {
-            $table->dropColumn('city_id');
+        Schema::table('tiket__types', function (Blueprint $table) {
+           $table->dropColumn('name');
         });
     }
 };
