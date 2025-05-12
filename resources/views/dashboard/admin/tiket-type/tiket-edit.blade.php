@@ -1,5 +1,7 @@
 @extends('layouts.admin-dashboard')
 
+@section('title', 'Квитки')
+
 @section('content')
     <form action="{{ route('tiket.update', $ticket['id']) }}" method="post">
     @csrf

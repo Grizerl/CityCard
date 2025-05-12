@@ -1,5 +1,7 @@
 @extends('layouts.admin-dashboard')
 
+@section('title', 'Квитки')
+
 @section('content')
     <section class="content">
         <div class="card">

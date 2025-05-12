@@ -1,5 +1,7 @@
 @extends('layouts.admin-dashboard')
 
+@section('title', 'Транспорт')
+
 @section('content')
 <form action="{{ route('transport.store') }}" method="post">
   @csrf

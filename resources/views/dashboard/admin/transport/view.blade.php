@@ -1,5 +1,7 @@
 @extends('layouts.admin-dashboard')
 
+@section('title', 'Транспорт')
+
 @section('content')
     <section class="content">
         <div class="card">

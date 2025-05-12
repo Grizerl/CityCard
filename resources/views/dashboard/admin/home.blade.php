@@ -1,5 +1,7 @@
 @extends('layouts.admin-dashboard')
 
+@section('title', 'Панель адміністратора')
+
 @section('content')
     <div class="d-flex gap-4">
         <div class="card text-center text-white shadow rounded-4 p-4" style="width: 400px; background-color: #0d6efd; ">

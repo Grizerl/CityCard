@@ -1,5 +1,7 @@
 @extends('layouts.admin-dashboard')
 
+@section('title', 'Міста')
+
 @section('content')
 <form action="{{ route('city.store') }}" method="post">
   @csrf

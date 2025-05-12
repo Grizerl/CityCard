@@ -1,5 +1,7 @@
 @extends('layouts.user-dashboard')
 
+@section('title', 'Панель користувача')
+
 @section('content')
 <section class="container my-5">
     <div class="row">
