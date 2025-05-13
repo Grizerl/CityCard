@@ -15,11 +15,11 @@ CityCard is a web application designed to help users manage and view their digit
 2. Change to the project folder: `cd citycard`.
 3. Install the dependencies: `composer install`.
 4. Configure the database connection in your .env file:
-    DB_CONNECTION=mysql
-    DB_HOST=your_database_host
-    DB_PORT=your__database_port
-    DB_DATABASE=your_database_name
-    DB_USERNAME=your_database_user
-    DB_PASSWORD=your_database_password
-5. Run the database migrations: php artisan migrate
-6. Start the Laravel development server: php artisan serve
+DB_CONNECTION=mysql  
+DB_HOST=your_database_host  
+DB_PORT=your_database_port  
+DB_DATABASE=your_database_name  
+DB_USERNAME=your_database_user  
+DB_PASSWORD=your_database_password
+5. Run the database migrations: `php artisan migrate`.
+6. Start the Laravel development server: `php artisan serve`.
