@@ -66,5 +66,8 @@
                 </table>
             </div>
         </div>
+         <div class="mt-2">
+            {{ $cities->links('pagination::bootstrap-4') }}
+         </div>
     </section>
 @endsection

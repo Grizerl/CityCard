@@ -9,14 +9,14 @@ use App\Http\Controllers\Dashboard\Admin\TransportController;
 use App\Http\Controllers\Dashboard\User\UserDashboard;
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\User;
-use Illuminate\Routing\RouteUri;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/', function (): RedirectResponse {
     return redirect()->route('user.login.form');
 });
 
-Route::prefix('admin')->middleware([Admin::class, 'auth'])->group(function(){
+Route::prefix('admin')->middleware([Admin::class, 'auth'])->group(function () {
 
     Route::get('dashboard', [AdminDashboard::class, 'home'])->name('admin.dashboard');
 
@@ -28,7 +28,7 @@ Route::prefix('admin')->middleware([Admin::class, 'auth'])->group(function(){
 
 });
 
-Route::prefix('user')->middleware([User::class, 'auth'])->group(function(){
+Route::prefix('user')->middleware([User::class, 'auth'])->group(function () {
 
     Route::get('dashboard', [UserDashboard::class, 'home'])->name('user.dashboard');
 

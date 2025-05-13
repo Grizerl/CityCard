@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Transport extends Model
 {
@@ -13,18 +15,27 @@ class Transport extends Model
         'city_id'
     ];
 
-    public function trips()
+    /**
+     * Get trips associated with transport.
+     */
+    public function trips(): HasMany
     {
         return $this->hasMany(Trip::class);
     }
 
-    public function city()
+    /**
+    * Get city associated with transport.
+    */
+    public function city(): BelongsTo
     {
-        return $this->belongsTo(Citi::class);
+        return $this->belongsTo(City::class);
     }
 
-    public function tiket_type()
+    /**
+     * Get ticket types associated with transport.
+     */
+    public function ticket_types(): HasMany
     {
-        return $this->hasMany(Tiket_Type::class);
+        return $this->hasMany(Ticket_Type::class);
     }
 }

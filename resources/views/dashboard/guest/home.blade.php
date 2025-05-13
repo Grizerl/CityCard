@@ -17,7 +17,7 @@
                             <div class="my-3">
                                 <h5>Поїздки:</h5>
                                 @forelse($card->trips as $trip)
-                                    <p>Поїздка: {{ $trip->tiket_types->name }} | {{ $trip->tiket_types->price }} грн | {{ $trip->transports->transport_type }} | {{ $trip->transports->transport_number }} | {{ $trip->transports->city->name }} | {{ $trip->created_at }}</p>
+                                    <p>Поїздка: {{ $trip->ticket_types->name }} | {{ $trip->ticket_types->price }} грн | {{ $trip->transports->transport_type }} | {{ $trip->transports->transport_number }} | {{ $trip->transports->city->name }} | {{ $trip->created_at }}</p>
                                 @empty
                                     <p class="text-muted">Дані відсутні</p>
                                 @endforelse
@@ -33,6 +33,9 @@
                         </div>
                     @endforeach
                 </div>
+            </div>
+            <div class="mt-4">
+                {{ $cards->links('pagination::bootstrap-4') }}
             </div>
         </div>
     </div>

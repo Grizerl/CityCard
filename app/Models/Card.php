@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Card extends Model
 {
@@ -13,17 +15,26 @@ class Card extends Model
         'balance',
     ];
 
-    public function users()
+    /**
+     * Get the user associated with the card.
+     */
+    public function users(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function trips()
+    /**
+     * Get trips for the card.
+     */
+    public function trips(): HasMany
     {
         return $this->hasMany(Trip::class);
     }
 
-    public function transactions()
+    /**
+     * Get transactions for the card.
+     */
+    public function transactions(): HasMany
     {
         return $this->hasMany(Transaction::class);
     }

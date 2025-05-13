@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Transaction extends Model
 {
@@ -13,7 +14,10 @@ class Transaction extends Model
         'card_id'
     ];
 
-    public function cards()
+    /**
+     * Get card associated with transaction.
+     */
+    public function cards(): BelongsTo
     {
         return $this->belongsTo(Card::class);
     }

@@ -6,8 +6,6 @@ use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Hash;
 
-use function Laravel\Prompts\password;
-
 class AdminRequest extends FormRequest
 {
     /**
@@ -34,7 +32,7 @@ class AdminRequest extends FormRequest
                 'string',
                 function ($attribute, $value, $fail) {
                     $user = User::where('name', $this->name)->first();
-            
+
                     if ($user && !Hash::check($value, $user->password)) {
                         $fail('The selected password is invalid.');
                     }

@@ -3,27 +3,37 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Trip extends Model
 {
     protected $table = 'trips';
     protected $fillable = [
         'card_id',
-        'tikets_types_id',
+        'ticket_types_id',
         'transport_id',
     ];
 
-    public function cards()
+    /**
+     * Get card associated with trip.
+     */
+    public function cards(): BelongsTo
     {
         return $this->belongsTo(Card::class);
     }
 
-    public function tiket_types()
+    /**
+     * Get ticket type associated with trip.
+     */
+    public function ticket_types(): BelongsTo
     {
-        return $this->belongsTo(Tiket_Type::class, 'tikets_types_id');
+        return $this->belongsTo(Ticket_Type::class, 'ticket_types_id');
     }
 
-    public function transports()
+    /**
+     * Get transport associated with trip.
+     */
+    public function transports(): BelongsTo
     {
         return $this->belongsTo(Transport::class, 'transport_id');
     }

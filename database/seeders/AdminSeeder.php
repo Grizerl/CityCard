@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -23,7 +22,7 @@ class AdminSeeder extends Seeder
 
         User::create([
             'name' => 'Content Moderator',
-            'phone' => '++380931234567',
+            'phone' => '+380931234567',
             'password' => Hash::make('moder123'),
             'role' => 'admin'
         ]);

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class () extends Migration {
@@ -10,11 +9,7 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('citis', function (Blueprint $table): void {
-            $table->id();
-            $table->string('name')->unique();
-            $table->timestamps();
-        });
+        Schema::rename('tiket__types', 'ticket__types');
     }
 
     /**
@@ -22,6 +17,6 @@ return new class () extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('citis');
+        Schema::rename('ticket__types', 'tiket__types');
     }
 };

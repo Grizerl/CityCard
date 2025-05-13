@@ -72,5 +72,8 @@
                 </table>
             </div>
         </div>
+        <div class="mt-2">
+            {{ $transport->links('pagination::bootstrap-4') }}
+        </div>
     </section>
 @endsection

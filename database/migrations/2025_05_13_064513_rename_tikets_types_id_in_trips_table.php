@@ -10,8 +10,8 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::table('tiket__types', function (Blueprint $table): void {
-            $table->enum('name', ['preferential', 'pupillary', 'regular'])->after('id');
+        Schema::table('trips', function (Blueprint $table): void {
+            $table->renameColumn('tikets_types_id', 'ticket_types_id');
         });
     }
 
@@ -20,8 +20,8 @@ return new class () extends Migration {
      */
     public function down(): void
     {
-        Schema::table('tiket__types', function (Blueprint $table): void {
-            $table->dropColumn('name');
+        Schema::table('trips', function (Blueprint $table): void {
+            $table->renameColumn('ticket_types_id', 'tikets_types_id');
         });
     }
 };
