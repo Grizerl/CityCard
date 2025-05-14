@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Dashboard\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminDashboard\TiketRequest;
-use App\Models\Ticket_Type;
+use App\Models\TicketType;
 use App\Models\Transport;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -18,7 +18,7 @@ class TiketController extends Controller
      */
     public function index(): View
     {
-        $ticket = Ticket_Type::paginate(10);
+        $ticket = TicketType::paginate(10);
         return view('dashboard.admin.tiket-type.view', compact('ticket'));
     }
 
@@ -41,7 +41,7 @@ class TiketController extends Controller
      */
     public function store(TiketRequest $request): RedirectResponse
     {
-        Ticket_Type::create($request->validated());
+        TicketType::create($request->validated());
         return redirect()->back()->with('success', 'Tiket created successfully.');
     }
 
@@ -63,7 +63,7 @@ class TiketController extends Controller
      */
     public function edit(int $id): View
     {
-        $ticket = Ticket_Type::findOrFail($id);
+        $ticket = TicketType::findOrFail($id);
         $transport = Transport::select('id', 'transport_number')->get();
         return view('dashboard.admin.tiket-type.tiket-edit', compact('ticket', 'transport'));
     }
@@ -77,7 +77,7 @@ class TiketController extends Controller
      */
     public function update(TiketRequest $request, int $id): RedirectResponse
     {
-        $ticket = Ticket_Type::findOrFail($id);
+        $ticket = TicketType::findOrFail($id);
 
         $ticket->update([
             'name' => $request->name,
@@ -96,7 +96,7 @@ class TiketController extends Controller
      */
     public function destroy(int $id): RedirectResponse
     {
-        Ticket_Type::findOrFail($id)->delete();
+        TicketType::findOrFail($id)->delete();
         return redirect()->back()->with('success', 'The tiket has been successfully deleted');
     }
 }

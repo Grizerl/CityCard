@@ -36,6 +36,6 @@ class Transport extends Model
      */
     public function ticket_types(): HasMany
     {
-        return $this->hasMany(Ticket_Type::class);
+        return $this->hasMany(TicketType::class);
     }
 }

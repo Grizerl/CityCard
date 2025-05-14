@@ -27,7 +27,7 @@ class Trip extends Model
      */
     public function ticket_types(): BelongsTo
     {
-        return $this->belongsTo(Ticket_Type::class, 'ticket_types_id');
+        return $this->belongsTo(TicketType::class, 'ticket_types_id');
     }
 
     /**

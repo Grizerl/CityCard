@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Ticket_Type extends Model
+class TicketType extends Model
 {
-    protected $table = 'ticket__types';
+    protected $table = 'ticket_types';
     protected $fillable = [
         'name',
         'price',
